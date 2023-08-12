@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>IST</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+  <div id="header">
+    <div id="settingsButton">Настройки</div><!--
+ --><canvas id="gridHeader"></canvas>
+	</div>
+	
+	<canvas id="deadlineGradient"></canvas>
+	<canvas id="grid"></canvas>
+	
+  <div id="machinesTasks">
+	  <div id="tasksQueue" class="machine">
+		  <div class="name">В очереди</div><div class="taskLine"></div>
+		</div>
+		<div id="fillerDiv"></div>
+	</div>
+
+  <ul id="taskMenu">
+    <li title='Удаление задачи, расположенной слева, сдвинет эту задачу' class='firstChild'><input id="toggleMagnet" type="checkbox" name="magnet"><label for="magnet">Магнит</label></li>
+    <li id="editTask">Редактировать задачу</li>
+    <li id="removeTask">Удалить задачу</li>
+	  <li id="addTask" class='lastChild'>Добавить задачу</li>
+  </ul>
+
+  <div id="editTaskMenu">
+		<table>
+			<tr>
+			  <td colspan="2"><button class="closeMenu">×</button>
+      </tr>
+		  <tr>
+			  <td>Название</td>
+			  <td><input type="text" class="editTaskMenuInput"></td>
+      </tr>
+		  <tr>
+			  <td>Начать с</td>
+			  <td><input type="datetime-local" class="editTaskMenuInput"></td>
+      </tr>
+		  <tr>
+			  <td>Длительность</td>
+			  <td><input type="time" class="editTaskMenuInput"></td>
+      </tr>
+		  <tr>
+			  <td>Количество</td>
+			  <td><input type="text" class="editTaskMenuInput"></td>
+      </tr>
+		  <tr>
+			  <td>Цвет</td>
+			  <td><input type="color" class="editTaskMenuInput"></td>
+      </tr>
+		  <tr>
+			  <td>Дедлайн</td>
+			  <td><input type="date" class="editTaskMenuInput"></td>
+      </tr>
+		  <tr>
+			  <td>Партия</td>
+			  <td><input type="text" class="editTaskMenuInput"></td>
+      </tr>
+		  <tr>
+			  <td>Автор</td>
+			  <td><input type="text" class="editTaskMenuInput"></td>
+      </tr>
+		  <tr>
+			  <td colspan="2">
+			    <input class="editTaskMenuOk" type="button" value="добавить">
+			    <input class="editTaskMenuOk" type="button" value="применить">
+				</td>
+      </tr>
+		</table>
+  </div>
+
+	<div id="settingsMenu">
+		<table>
+			<tr>
+			  <td colspan="2"><button class="closeMenu">×</button>
+      </tr>
+		  <tr>
+			  <td colspan="2"><input type="button" value="Скрыть станки"></td>
+      </tr>
+		  <tr>
+			  <td colspan="2"><input type="button" value="Скрыть задачи авторов"></td>
+      </tr>
+		  <tr>
+				<td colspan="2"><input type="button" value="Скрыть партии"></td>
+      </tr>
+		  <tr>
+			  <td>Интервал синхронизации</td>
+			  <td><input type="Number" class="settingsInput" min="1" max="60"></td>
+      </tr>
+		  <tr>
+			  <td>Цвет задач по умолчанию</td>
+			  <td><input type="color" class="settingsInput"></td>
+      </tr>
+		  <tr>
+			  <td>Магниты по умолчанию</td>
+			  <td><input type="checkbox" class="settingsInput"></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="hideMachines">
+		<div>
+			<table>
+			  <tbody>
+				  <tr><td>Показать все</td><td><input type="checkbox" name="Показать все" checked></td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="authorsList">
+		<div>
+			<table>
+			  <tbody>
+				  <tr><td>Показать все</td><td><input type="checkbox" name="Показать все" checked></td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="partysList">
+		<div>
+			<table>
+			  <tbody>
+				  <tr><td>Показать все</td><td><input type="checkbox" name="Показать все" checked></td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+  <div id="periodMenu">
+	  <div>Указать период <button class="closeMenu">×</button></div>
+		<div>С <input type="date"> по <input type="date"></div>
+		<button>применить</button>
+	</div>
+<script src="script.js"></script>
+<!--
+ когда скрываешь всех авторов, а затем снова открываешь меню, то все галочки стоят
+ все задачи одной группы и при этом одного автора окрываются неправильно
+ все скрытия задач и авторов слетают при синхронизации данных с сервером
+Переименовывать и добавлять станки
+Авторизация: влияние типа пароля на доступные возможности
+git push heroku main
+-->
+</body>
+</html>

@@ -1,0 +1,188 @@
+﻿* {margin: 0; border:0; padding: 0; vertical-align:middle; font:12px sans-serif;}
+body {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+	height: 588px;							 /* Примерная высота всего рабочего пространства 44+462+82*/
+}
+input:disabled { background: #ccc;}
+label {margin: .4rem;}
+
+#header {
+	position:sticky;
+	top:0;
+	z-index:4;
+}
+#header * {display: inline-block;}
+
+#settingsButton {
+	width:137px;
+	height:42px;
+	line-height:42px;
+	text-align:center;
+	font-size:2em;
+	border:1px solid black;
+	border-radius:5px;
+	background-color:white;
+	position:-webkit-sticky; position:sticky; left:0px;
+}
+
+#machinesTasks {position:absolute; top:44px;}
+.machine:hover {background-color:rgba(204, 204, 204, 0.5);}
+#machinesTasks .name {position:-webkit-sticky; position:sticky; left:0px;}
+.name {
+  display:inline-block;
+  width:135px;
+  height:17px;
+  padding:3px 0 0 2px;
+  border:1px solid black;
+  border-radius:5px;
+  white-space:nowrap;
+  overflow:hidden;
+	background-color:white;
+	z-index:2;
+}
+.taskLine {display:inline-block; height:22px;}
+.task {
+  position:absolute;
+  display:inline-block;
+  height:17px;
+  padding:3px 0 0 2px;
+  border:1px solid black;
+  border-radius:5px;
+  white-space:nowrap;
+  overflow:hidden;
+  background-color:#04AA6D;
+	z-index:1;
+}
+.task:hover {border-color:white}
+
+#grid {position:absolute; left:139px; top:44px; z-index:0}
+#deadlineGradient {position:absolute; left:139px; z-index:0}
+
+#tasksQueue {position:fixed; bottom:0; border:1px solid black; border-radius:5px; z-index:3;}
+#tasksQueue .name {position:relative; height:77.5px; text-align:center; display:table-cell; vertical-align:middle; font-size:2em;}
+#tasksQueue .taskLine {background-color:white; height:82px; overflow-y:scroll; display:table-cell; vertical-align:top;}
+#tasksQueue .task {position:relative;}
+
+#taskMenu {position:fixed; top:100px; left:100px; visibility:hidden; border-radius:5px; z-index:5}
+#taskMenu .firstChild {border-radius:5px 5px 0px 0px;}
+#taskMenu li:last-child {border-radius:0px 0px 5px 5px;}
+#taskMenu li {list-style-type: none; padding:5px; background-color:rgb(204, 204, 204);}
+#taskMenu li:hover {background-color:rgb(230, 230, 230); cursor:pointer}
+
+#editTaskMenu {position:fixed; top:200px; left:200px; background-color:rgb(255, 255, 255); border:1px solid black; border-radius:5px; padding:5px; display:table; visibility:hidden; z-index:5}
+#editTaskMenu button {border:1px solid black; border-radius:5px;}
+#editTaskMenu td {padding:2px;}
+#editTaskMenu td:last-child {text-align:right;}
+#editTaskMenu td[colspan="2"] {text-align:center;}
+#editTaskMenu input {border:1px solid black; border-radius:5px; padding:3px; width:150px;}
+#editTaskMenu input[type=color] {width:158px; padding:2px;}
+.editTaskMenuOk {padding:3px 6px 3px 6px;}
+.closeMenu {float: right;}
+
+#settingsMenu {position:fixed; top:0; left:0; background-color:rgb(255, 255, 255); border:1px solid black; border-radius:5px; padding:5px; display:table; visibility:hidden; z-index:5}
+#settingsMenu button {border:1px solid black; border-radius:5px;}
+#settingsMenu td {padding:2px;}
+#settingsMenu td[colspan="2"] {text-align:center;}
+#settingsMenu input {border:1px solid black; border-radius:5px; padding:3px; width:30px;}
+#settingsMenu input[type=button] {width:auto;}
+#settingsMenu input[type=color] {width:38px; padding:2px;}
+
+#hideMachines {position:fixed; top:0; left:139px; width:150px; background-color:rgb(255, 255, 255); border:1px solid black; border-radius:5px; padding:5px; display:table; visibility:hidden; z-index:5;}
+#hideMachines>div {
+	height:300px;
+	width:150px;
+	overflow:auto;
+}
+#hideMachines tbody {
+	height:100%;
+	table-layout: fixed;
+	border: none;
+}
+
+#authorsList, #partysList {position:fixed; top:0; left:139px; width:150px; background-color:rgb(255, 255, 255); border:1px solid black; border-radius:5px; padding:5px; display:table; visibility:hidden; z-index:5;}
+#authorsList>div, #partysList>div {
+	height:150px;
+	width:120px;
+	overflow:auto;
+}
+#authorsList tbody, #partysList tbody {
+	height:100%;
+	table-layout: fixed;
+	border: none;
+	text-align:center;
+}
+
+#periodMenu {position:fixed; top:200px; left:200px; background-color:rgb(255, 255, 255); border:1px solid black; border-radius:5px; padding:5px; width:340px; text-align:center; visibility:hidden; z-index:5}
+#periodMenu button, #periodMenu input {border:1px solid black; border-radius:5px; margin:5px;}
+#periodMenu button:not(.closeMenu) {padding:3px 6px 3px 6px;}
+
+/* Bordered form */
+body nav {text-align:center;}
+#authorization {
+   background-color:rgb(255, 255, 255);  border:3px solid #f1f1f1; 
+}
+
+/* Full-width inputs */
+#authorization input[type=text], #authorization input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#authorization button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+#authorization button:hover {
+  opacity: 0.8;
+}
+
+/* Center the avatar image inside this container */
+#authorization .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+#authorization img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+#authorization .container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+#authorization span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  #authorization span.psw {
+    display: block;
+    float: none;
+  }
+  #authorization .cancelbtn {
+    width: 100%;
+  }
+}
