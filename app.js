@@ -5,7 +5,7 @@ const express = require('express'),
       path = require('path'),
       fs=require('fs'),
       port = process.env.PORT || 3000,
-      uri = process.env.MONGODB_URI || "mongodb+srv://freephoenix:6zhDHSJypKudQOwB@cluster0.k7udb.mongodb.net/ist?retryWrites=true&w=majority", //'mongodb://localhost:27017/ist'
+      uri = process.env.MONGODB_URI || "way to your mongodb database", //'mongodb://localhost:27017/ist'
       mongoose = require('mongoose'),
       Schema = mongoose.Schema,
 			setOfIDs=new Set(),
